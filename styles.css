@@ -1,0 +1,79 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.like-button {
+  cursor: pointer;
+  overflow: visible;
+  transition: transform 50ms ease-in-out;
+}
+
+.like-button.big {
+  transform: scale(1.2);
+}
+
+.like-button .exploded {
+  cursor: initial;
+}
+
+.like-button.big:not(.exploded) {
+  transform: scale(1.2);
+}
+.group-top {
+  display: block;
+}
+.group-cuff {
+  display: block;
+}
+.group-bottom-right {
+  display: block;
+}
+.group-top-right {
+  display: block;
+}
+.group-connector {
+  display: block;
+}
+.crack {
+  display: none;
+}
+
+.group-top.cracked .crack,
+.group-top-right.cracked .crack,
+.group-bottom-right.cracked .crack,
+.group-connector.cracked .crack .group-cuff.cracked .crack {
+  display: block;
+}
+
+.group-top,
+.group-top-right,
+.group-bottom-right,
+.group-connector,
+.group-cuff {
+  transition: transform 1.5s;
+  transform-origin: center;
+}
+
+.exploded .group-top {
+  transform: translate(-15vw, -40vh) rotate(540deg);
+}
+
+.exploded .group-top-right {
+  transform: translate(45vw, -30vh) rotate(340deg);
+}
+
+.exploded .group-bottom-right {
+  transform: translate(40vw, 30vh) rotate(200deg);
+}
+
+.exploded .group-connector {
+  transform: translate(-45vw, -10vh) rotate(740deg);
+}
+
+.exploded .group-cuff {
+  transform: translate(-40vw, 15vh) rotate(54deg);
+}
